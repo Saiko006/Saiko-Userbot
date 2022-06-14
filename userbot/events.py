@@ -21,7 +21,7 @@ from userbot import (
 )
 
 
-def toni_cmd(pattern=None, command=None, **args):
+def saiko_cmd(pattern=None, command=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
