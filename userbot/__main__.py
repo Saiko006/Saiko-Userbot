@@ -25,16 +25,16 @@ try:
     call_py.start()
     user = bot.get_me()
     blacklistuser = requests.get(
-        "https://raw.githubusercontent.com/Tonic990/blacklist/master/toniblacklist.json"
+        "https://raw.githubusercontent.com/Saiko006/blacklist/master/saikoblacklist.json"
     ).json()
     if user.id in blacklistuser:
         LOGS.warning(
-            "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nCredits: @Bukan_guudlooking"
+            "MAKANYA GA USAH BERTINGKAH NGTD, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE BOCAH HINA KEK LU.\nCredits: @teleudahhina"
         )
         sys.exit(1)
     if not DEVS:
         LOGS.warning(
-            f"EOL\nTonic-UserBot v{BOT_VER}, Copyright © 2021-2022 Tonic-Userbot• <https://github.com/Tonic990>"
+            f"EOL\nSaiko-UserBot v{BOT_VER}, Copyright © 2021-2022 Saiko-Userbot• <https://github.com/Saiko006>"
         )
         sys.exit(1)
 except Exception as e:
@@ -51,15 +51,15 @@ if not BOTLOG_CHATID:
     bot.loop.run_until_complete(autopilot())
 
 LOGS.info(
-    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/PrimeSupportGroup"
+    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/SaikoSupport"
 )
 
-LOGS.info(f"Tonic-Userbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
+LOGS.info(f"Saiko-Userbot ⚙️ V{BOT_VER} [🔥 BERHASIL DIAKTIFKAN! 🔥]")
 
 async def check_alive():
     try:
         if BOTLOG_CHATID != 0:
-            await bot.send_message(BOTLOG_CHATID, f"✨ **Tonic Userbot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 3.1.0@Tonic-Userbot\n➠ **Ketik** `{cmd}ping` **Untuk Mengecheck Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @PrimeSupportGroup ")
+            await bot.send_message(BOTLOG_CHATID, f"✨ **Saiko Userbot Berhasil Diaktifkan**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 3.1.0@Saiko-Userbot\n➠ **Ketik** `{cmd}ping` **Untuk Mengecheck Bot**\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @SaikoSupport ")
     except Exception as e:
         LOGS.info(str(e))
     try:
