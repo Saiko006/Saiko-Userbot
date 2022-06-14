@@ -252,8 +252,8 @@ def register(**args):
                 if not disable_errors:
                     date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
 
-                    text = "**Tonic-Project ERROR**\n"
-                    link = "Silahkan chat: @Bukan_guudlooking"
+                    text = "**Saiko-Project ERROR**\n"
+                    link = "Silahkan chat: @teleudahhina"
                     text += "Untuk melaporkan kesalahan"
                     text += f"tinggal teruskan pesan ini {link}.\n"
                     text += "Sendi Siap Membantu Kamu\n"
