@@ -809,7 +809,7 @@ Voice chat group menu untuk {owner}
 """)
                 await event.edit(
                     text,
-                    file=saikologo,
+                    file=tonilogo,
                     link_preview=True,
                     buttons=[Button.inline("ʙᴀᴄᴋ", data="saiko_inline")])
             else:
