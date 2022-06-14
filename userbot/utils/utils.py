@@ -64,7 +64,7 @@ async def autobot():
     if who.username:
         username = who.username + "_ubot"
     else:
-        username = "tonibot" + (str(who.id))[5:] + "ubot"
+        username = "saikobot" + (str(who.id))[5:] + "ubot"
     bf = "@BotFather"
     await bot(UnblockRequest(bf))
     await bot.send_message(bf, "/cancel")
@@ -97,7 +97,7 @@ async def autobot():
     await bot.send_read_acknowledge("botfather")
     if isdone.startswith("Sorry,"):
         ran = randint(1, 100)
-        username = "tonibot" + (str(who.id))[6:] + str(ran) + "ubot"
+        username = "saikobot" + (str(who.id))[6:] + str(ran) + "ubot"
         await bot.send_message(bf, username)
         await asyncio.sleep(1)
         nowdone = (await bot.get_messages(bf, limit=1))[0].text
@@ -126,7 +126,7 @@ async def autobot():
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @PrimeSupportGroup ✨"
+                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @SaikoSupport ✨"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -147,8 +147,8 @@ async def autobot():
                              manage_call=True,
                          )
             await bot(EditAdminRequest(int(BOTLOG_CHATID), f"@{username}", rights, "ᴀssɪsᴛᴀɴᴛ"))
-            toni = "userbot/resource/extras/Tonic.jpg"
-            await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(toni)))
+            saiko = "userbot/resource/extras/Saiko.jpg"
+            await bot(EditPhotoRequest(BOTLOG_CHATID, await bot.upload_file(saiko)))
             heroku_var["BOT_TOKEN"] = token
             heroku_var["BOT_USERNAME"] = f"@{username}"
         else:
@@ -181,7 +181,7 @@ async def autobot():
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @PrimeSupportGroup ✨"
+            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @SaikoSupport ✨"
         )
         await bot.send_message(
             BOTLOG_CHATID,
@@ -254,7 +254,7 @@ async def autopilot():
         r = await bot(
             CreateChannelRequest(
                 title="ᴛᴏɴɪᴄ ᴜsᴇʀʙᴏᴛ ʟᴏɢs",
-                about="ᴍʏ ᴛᴏɴɪᴄ ʟᴏɢs ɢʀᴏᴜᴘ\n\n Join @PrimeSupportGroup",
+                about="ᴍʏ ꜱᴀɪᴋᴏ ʟᴏɢs ɢʀᴏᴜᴘ\n\n Join @SaikoSupport",
                 megagroup=True,
             ),
         )
@@ -324,7 +324,7 @@ def remove_plugin(shortname):
     except BaseException:
         raise ValueError
 
-# bye Ice-Userbot
+# bye Saiko-Userbot
 
 async def create_supergroup(group_name, client, botusername, descript):
     try:
