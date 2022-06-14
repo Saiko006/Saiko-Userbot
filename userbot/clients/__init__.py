@@ -6,4 +6,4 @@
 # t.me/SharingUserbot & t.me/Lunatic0de
 
 from .logger import saiko_userbot_on
-from .startup import toni_client, multi_saiko
+from .startup import saiko_client, multi_saiko
