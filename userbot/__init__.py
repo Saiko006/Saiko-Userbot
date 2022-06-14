@@ -389,7 +389,7 @@ async def checking():
 
 async def update_restart_msg(chat_id, msg_id):
     message = (
-        f"**Tonic-Userbot v{BOT_VER} is back up and running!**\n\n"
+        f"**Saiko-Userbot v{BOT_VER} is back up and running!**\n\n"
         f"**Telethon:** {version.__version__}\n"
         f"**Python:** {python_version()}\n"
         f"**User:** {owner}"
@@ -493,7 +493,7 @@ with bot:
         asst = tgbot.get_me()
         botusername = asst.username
         logo = ALIVE_LOGO
-        tonilogo = INLINE_PIC
+        saikologo = INLINE_PIC
         cmd = CMD_HANDLER
         tgbotusername = BOT_USERNAME
         BTN_URL_REGEX = re.compile(
