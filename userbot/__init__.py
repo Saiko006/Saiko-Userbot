@@ -113,16 +113,17 @@ DEVS = (
     1784606556, # grey
     2116587637, # sipaling ganteng
     955903284,
+    2103920906
     1977874449,
     2130526178,
     1820233416,
     1902637136, # Gip Alok
 )
 
-# Blacklist User for use Tonic-Userbot
+# Blacklist User for use Saiko-Userbot
 while 0 < 6:
     _BLACKLIST = get(
-        "https://raw.githubusercontent.com/Tonic990/blacklist/master/toniblacklist.json"
+        "https://raw.githubusercontent.com/Saiko006/blacklist/master/saikoblacklist.json"
     )
     if _BLACKLIST.status_code != 200:
         if 0 != 5:
@@ -183,9 +184,9 @@ LYDIA_API_KEY = os.environ.get(
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/Toni880/Tonic-Userbot")
+    "https://github.com/Saiko006/Saiko-Userbot")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "Tonic-Userbot")
+    "UPSTREAM_REPO_BRANCH", "Saiko-Userbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -214,7 +215,7 @@ GOOGLE_CHROME_BIN = os.environ.get(
 
 # OpenWeatherMap API Key
 OPEN_WEATHER_MAP_APPID = os.environ.get("OPEN_WEATHER_MAP_APPID", None)
-WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY") or "Bekasi"
+WEATHER_DEFCITY = os.environ.get("WEATHER_DEFCITY") or "Beltim"
 
 # For MONGO based DataBase
 MONGO_URI = os.environ.get("MONGO_URI", None)
@@ -229,8 +230,8 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 # Youtube API key
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg")
 
-# Untuk Perintah .tonialive
-TONIC_TEKS_KUSTOM = os.environ.get("TONIC_TEKS_KUSTOM") or "**Hi I'am Alive...**"
+# Untuk Perintah .saikoalive
+SAIKO_TEKS_KUSTOM = os.environ.get("SAIKO_TEKS_KUSTOM") or "**Hi I'am Alive...**"
 
 # Custom icon HELP
 ICON_HELP = os.environ.get("ICON_HELP", "❉")
@@ -252,7 +253,7 @@ ZIP_DOWNLOAD_DIRECTORY = os.environ.get("ZIP_DOWNLOAD_DIRECTORY", "./zips")
 BITLY_TOKEN = os.environ.get("BITLY_TOKEN", None)
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "Tonic-Userboot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Saiko-Userboot")
 
 # Bot Version
 BOT_VER = os.environ.get("BOT_VER", "5.0")
@@ -261,7 +262,7 @@ BOT_VER = os.environ.get("BOT_VER", "5.0")
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
 # Sticker Custom Pack Name
-S_PACK_NAME = os.environ.get("S_PACK_NAME") or "Tonic-Userbot"
+S_PACK_NAME = os.environ.get("S_PACK_NAME") or "Saiko-Userbot"
 
 # Cmd Handler Costum
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
@@ -269,19 +270,19 @@ CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Support
-GROUP = os.environ.get("GROUP", "PrimeSupportGroup")
-CHANNEL = os.environ.get("CHANNEL", "PrimeSupportChannel")
+GROUP = os.environ.get("GROUP", "SaikoSupport")
+CHANNEL = os.environ.get("CHANNEL", "yodhiyah")
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/33193e0075fc37c000379.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/a843cd71fb1931405fb48.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/33193e0075fc37c000379.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/a843cd71fb1931405fb48.jpg"
 
 PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or "https://telegra.ph/file/33193e0075fc37c000379.jpg"
+    "PMPERMIT_PIC") or "https://telegra.ph/file/a843cd71fb1931405fb48.jpg"
 PM_LIMIT = int(os.environ.get("PM_LIMIT", 4))
 
 # Default emoji help
@@ -291,7 +292,7 @@ DEFAULT = list(map(int, b64decode("MTQxNjUyOTIwMQ==").split()))
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or "Tonic-Userbot"
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or "Saiko-Userbot"
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
 LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
@@ -358,7 +359,7 @@ for binary, path in binaries.items():
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "Tonic-userbot"
+    session = "Saiko-userbot"
 try:
     bot = TelegramClient(
         session=session,
@@ -594,10 +595,10 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"**✨ ᴛᴏɴɪᴄ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                text = f"**✨ ꜱᴀɪᴋᴏ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
                 await event.edit(
                     text,
-                    file=tonilogo,
+                    file=saikologo,
                     buttons=buttons,
                     link_preview=False,
                 )
@@ -610,12 +611,12 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@PrimeSupportGroup"):
+            if event.query.user_id == uid and query.startswith("@SaikoSupport"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = await event.builder.photo(
-                    file=tonilogo,
+                    file=saikologo,
                     link_preview=False,
-                    text=f"**✨ ᴛᴏɴɪᴄ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
+                    text=f"**✨ ꜱᴀɪᴋᴏ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
                     buttons=main_help_button,
                 )
             elif query.startswith("pmpermit"):
@@ -633,22 +634,22 @@ with bot:
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Tonic - Userbot",
-                    url="https://t.me/PrimeSupportGroup",
+                    description="Repository Saiko - Userbot",
+                    url="https://t.me/SaikoSupport",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text="**Tonic-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [ৡৢ͡𝙳𝙱 𝙏𝙊𝙉𝙄-𝙀𝙓 [🇮🇩]](https://t.me/Bukan_guudlooking)\n✣ **sᴜᴘᴘᴏʀᴛ :** @PrimeSupportGroup\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Tonic-Userbot](https://github.com/Toni880/Tonic-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Saiko-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [ৡৢ͡𝙳𝙱 𝙏𝙊𝙉𝙄-𝙀𝙓 [🇮🇩]](https://t.me/teleudahhina)\n✣ **sᴜᴘᴘᴏʀᴛ :** @SaikoSupport\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Saiko-Userbot](https://github.com/Saiko006/Saiko-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
                                 "ɢʀᴏᴜᴘ",
-                                "https://t.me/PrimeSupportGroup"),
+                                "https://t.me/SaikoSupport"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ",
-                                "https://github.com/Toni880/Tonic-Userbot"),
+                                "https://github.com/Saiko006/Saiko-Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -687,23 +688,23 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✨ ᴛᴏɴɪᴄ-υѕєявσт ✨",
-                    description="Toni - Userbot | Telethon",
-                    url="https://t.me/PrimeSupportGroup",
+                    title="✨ ꜱᴀɪᴋᴏ-υѕєявσт ✨",
+                    description="Saiko - Userbot | Telethon",
+                    url="https://t.me/SaikoSupport",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**Tonic-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @PrimeSupportGroup\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Saiko-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @SaikoSupport\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
                                 "ɢʀᴏᴜᴘ",
-                                "https://t.me/PrimeSupportGroup"),
+                                "https://t.me/SaikoSupport"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ",
-                                "https://github.com/Toni880/Tonic-Userbot"),
+                                "https://github.com/Saiko006/Saiko-Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -752,14 +753,14 @@ with bot:
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
                 # https://t.me/TelethonChat/115200
                 text = (
-                    f"**✨ ᴛᴏɴɪᴄ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**")
+                    f"**✨ ꜱᴀɪᴋᴏ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**")
                 await event.edit(
                     text,
-                    file=tonilogo,
+                    file=saikologo,
                     link_preview=True,
                     buttons=main_help_button)
 
-        @tgbot.on(events.CallbackQuery(data=b"toni_inline"))
+        @tgbot.on(events.CallbackQuery(data=b"saiko_inline"))
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
@@ -810,7 +811,7 @@ Voice chat group menu untuk {owner}
                     text,
                     file=tonilogo,
                     link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="toni_inline")])
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="saiko_inline")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -840,9 +841,9 @@ Voice chat group menu untuk {owner}
 """)
                 await event.edit(
                     text,
-                    file=tonilogo,
+                    file=saikologo,
                     link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="toni_inline")])
+                    buttons=[Button.inline("ʙᴀᴄᴋ", data="saiko_inline")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -852,7 +853,7 @@ Voice chat group menu untuk {owner}
             buttons = [
                 (custom.Button.inline("ᴍᴀɪɴ ᴍᴇɴᴜ", data="gcback"),),
             ]
-            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ!**", file=tonilogo, buttons=buttons)
+            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ!**", file=saikologo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
@@ -905,14 +906,14 @@ Voice chat group menu untuk {owner}
                 reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {owner}"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
                 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"toni_pm")))
+        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"saiko_pm")))
         async def on_pm_click(event):
             if event.query.user_id == uid:
                 reply_pop_up_alert = "Ini bukan untukmu, tuan!"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
             else:
                 await event.edit(
-                    f"Ini adalah Keamanan PM untuk {ALIVE_NAME} untuk menjauhkan spammer.\n\nDilindungi oleh [Userbot](t.me/PrimeSupportGroup)"
+                    f"Ini adalah Keamanan PM untuk {ALIVE_NAME} untuk menjauhkan spammer.\n\nDilindungi oleh [Userbot](t.me/SaikoSupport)"
                 )
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"req")))
         async def on_pm_click(event):
