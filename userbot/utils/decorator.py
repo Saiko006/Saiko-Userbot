@@ -15,7 +15,7 @@ from userbot import (
     tgbot,
 )
 
-def toni_cmd(
+def saiko_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
     disable_edited: bool = False,
@@ -45,18 +45,18 @@ def toni_cmd(
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            toni_reg = sudo_reg = re.compile(pattern)
+            saiko_reg = sudo_reg = re.compile(pattern)
         else:
-            toni_ = "\\" + CMD_HANDLER
+            saiko_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            toni_reg = re.compile(toni_ + pattern)
+            saiko_reg = re.compile(toni_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
-                cmd1 = toni_ + command
+                cmd1 = saiko_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (toni_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
+                    (saiko_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
                 )
                 cmd2 = (
                     (sudo_ + pattern)
@@ -74,9 +74,9 @@ def toni_cmd(
         if not disable_edited:
             bot.add_event_handler(
                 func, events.MessageEdited(
-                    **args, outgoing=True, pattern=toni_reg))
+                    **args, outgoing=True, pattern=saiko_reg))
         bot.add_event_handler(
-            func, events.NewMessage(**args, outgoing=True, pattern=toni_reg)
+            func, events.NewMessage(**args, outgoing=True, pattern=saiko_reg)
         )
         if allow_sudo:
             if not disable_edited:
@@ -101,7 +101,7 @@ def toni_cmd(
     return decorator
 
 
-def toni_handler(
+def saiko_handler(
     **args,
 ):
     def decorator(func):
