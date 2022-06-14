@@ -16,11 +16,11 @@ from userbot import (
 from userbot.utils import checking
 
 MSG_ON = """
-✨ **Tonic-Userbot Berhasil Di Aktifkan**
+✨ **Saiko-Userbot Berhasil Di Aktifkan**
 ━━
 ➠ **Userbot Version -** `{}@{}`
 ➠ **Ketik** `{}alive` **untuk Mengecheck Bot**
-➠ **Powered By:** @PrimeSupportGroup
+➠ **Powered By:** @SaikoSupport
 ━━
 """
 async def toni_userbot_on():
@@ -35,16 +35,16 @@ async def toni_userbot_on():
     )
     try:
         if bot and tgbot:
-            ToniUBOT = await tgbot.get_me()
-            BOT_USERNAME = ToniUBOT.username
+            SaikoUBOT = await tgbot.get_me()
+            BOT_USERNAME = SaikoUBOT.username
             await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
             await asyncio.sleep(3)
     except BaseException:
         pass
     try:
         if bot and tgbot:
-            ToniUBOT = await tgbot.get_me()
-            BOT_USERNAME = ToniUBOT.username
+            SaikoUBOT = await tgbot.get_me()
+            BOT_USERNAME = SaikoUBOT.username
             await bot(EditAdminRequest(BOTLOG_CHATID, BOT_USERNAME, new_rights, "BOT"))
             await asyncio.sleep(3)
     except BaseException:
