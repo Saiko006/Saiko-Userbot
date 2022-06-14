@@ -38,7 +38,7 @@ def saiko_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global toni_reg
+        global saiko_reg
         global sudo_reg
         if (
             pattern.startswith(r"\#")
@@ -49,7 +49,7 @@ def saiko_cmd(
         else:
             saiko_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            saiko_reg = re.compile(toni_ + pattern)
+            saiko_reg = re.compile(saiko_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
                 cmd1 = saiko_ + command
