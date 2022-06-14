@@ -53,7 +53,7 @@ async def get_user_from_event(
             if previous_message.from_id is None:
                 if not noedits:
                     await edit_delete(
-                        tonicevent, "**ERROR: Dia adalah anonymous admin!**", 60
+                        saikocevent, "**ERROR: Dia adalah anonymous admin!**", 60
                     )
                 return None, None
             user_obj = await event.client.get_entity(previous_message.sender_id)
@@ -61,7 +61,7 @@ async def get_user_from_event(
         if not args:
             if not noedits:
                 await edit_delete(
-                    tonicevent,
+                    Saikocevent,
                     "**Mohon Reply Pesan atau Berikan User ID/Username pengguna!**",
                     60,
                 )
@@ -70,7 +70,7 @@ async def get_user_from_event(
         LOGS.error(str(e))
     if not noedits:
         await edit_delete(
-            tonicevent,
+            Saikocevent,
             "**Mohon Reply Pesan atau Berikan User ID/Username pengguna!**",
             60,
         )
