@@ -16,14 +16,14 @@ from userbot import (
 )
 from userbot.modules.gcast import GCAST_BLACKLIST as GBL
 
-EOL = "EOL\nTonic-UserBot v{}, Copyright © 2021-2022 ᴛᴏɴɪ• <https://github.com/Tonic990>"
-MSG_BLACKLIST = "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOT {} GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU.\nTonic-UserBot v{}, Copyright © 2021-2022 ᴛᴏɴɪ• <https://github.com/Tonic990>"
+EOL = "EOL\nSaiko-UserBot v{}, Copyright © 2021-2022 ꜱᴀɪᴋᴏ• <https://github.com/Saiko006>"
+MSG_BLACKLIST = "MAKANYA GA USAH BERTINGKAH NGTD, USERBOT {} GUA MATIIN NAJIS BANGET DIPAKE BOCAH HINA KEK LO.\nSaiko-UserBot v{}, Copyright © 2021-2022 ꜱᴀɪᴋᴏ• <https://github.com/Saiko006>"
 
-async def toni_client(client):
+async def saiko_client(client):
     client.me = await client.get_me()
     client.uid = get_peer_id(client.me)
 
-def multi_toni():
+def multi_saiko():
     if 1416529201 not in DEVS:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
@@ -38,7 +38,7 @@ def multi_toni():
         try:
             bot.start()
             call_py.start()
-            LOOP.run_until_complete(toni_client(bot))
+            LOOP.run_until_complete(saiko_client(bot))
             user = bot.get_me()
             name = user.first_name
             uid = user.id
